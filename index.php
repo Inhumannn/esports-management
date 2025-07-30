@@ -9,7 +9,8 @@
   </head>
   <body>
     <?php include 'components/header.php'; ?>
-    <main>Contenu principale</main>
+    <main>
+    </main>
     <?php include 'components/footer.php'; ?>
   </body>
 </html>

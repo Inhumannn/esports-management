@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'esports';
-$username = 'root';
-$password = '';
+$username = 'esportAdmin';
+$password = 'esport1234';
 try {
   $pdo = new PDO(
     "mysql:host=$host;dbname=$dbname;charset=utf8",

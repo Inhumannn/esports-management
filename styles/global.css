@@ -68,17 +68,21 @@ header {
   align-items: center;
   padding: var(--space-sm);
   color: var(--main-color);
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 9999%;
+    object-fit: cover;
+  }
   nav {
     ul {
       list-style: none;
       display: flex;
+      align-items: center;
       gap: 50px;
       .fail-auth {
         display: flex;
         gap: 15px;
-      }
-      .suc-auth {
-        display: none;
       }
     }
   }
@@ -88,4 +92,26 @@ footer {
   margin: auto;
   padding: var(--space-lg);
   text-align: center;
+}
+#page-register {
+  display: flex;
+  justify-content: center;
+  main {
+    max-width: 980px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      margin: 20px 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      input {
+        padding: 8px 15px;
+      }
+    }
+  }
 }
