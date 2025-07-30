@@ -130,7 +130,7 @@ footer {
   #section-teams {
     max-width: 670px;
     margin: auto;
-    padding: var(--space-md);
+    padding: var(--space-sm);
     .section-teams-card {
       > div {
         display: flex;
@@ -142,12 +142,12 @@ footer {
     .section-tournaments-card {
       max-width: 670px;
       margin: auto;
-      padding: var(--space-md);
-      > div:nth-child(1) {
+      padding: var(--space-sm);
+      .title-game {
         display: flex;
         align-items: flex-end;
       }
-      > div:nth-child(3) {
+      .date {
         display: flex;
         gap: 20px;
       }
