@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+:root {
+  --font-logo: "Outfit", sans-serif;
+  --font-title: "Roboto", sans-serif;
+  --font-main: "Open Sans", sans-serif;
+
+  --main-color: #000000;
+  --second-color: #ffffff;
+  --third-color: #fff8f0;
+  --nav-color: #7a7a7a;
+  --background-cover: #0000005c;
+
+  --w-logo: clamp(28px, 5vw, 47px);
+  --fz-title: clamp(24px, 4.5vw, 40px);
+  --fw-title: 600;
+  --fz-title2: clamp(28px, 4.5vw, 40px);
+  --fz-title3: clamp(20px, 3vw, 28px);
+  --fz-p: clamp(16px, 1.5vw, 20px);
+  --w-icon: clamp(18px, 2.5vw, 24px);
+
+  --space-xs: 8px 15px;
+  --space-sm: 30px 15px;
+  --space-md: 75px 15px;
+  --space-lg: 150px 15px;
+}
+h1,
+h2,
+h3 {
+  font-weight: var(--fw-title);
+}
+h1 {
+  font-family: var(--font-logo);
+  font-size: var(--fz-title);
+}
+h2 {
+  font-family: var(--font-title);
+  font-size: var(--fz-title2);
+}
+h3 {
+  font-family: var(--font-title);
+  font-size: var(--fz-title3);
+}
+p,
+a {
+  font-family: var(--font-main);
+  font-size: var(--fz-p);
+}
+a {
+  color: var(--main-colors);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+img {
+  width: 10%;
+  height: 100%;
+}
+header {
+  max-width: 1920px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm);
+  color: var(--main-color);
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      .fail-auth {
+        display: flex;
+        gap: 15px;
+      }
+      .suc-auth {
+        display: none;
+      }
+    }
+  }
+}
+footer {
+  max-width: 1440px;
+  margin: auto;
+  padding: var(--space-lg);
+  text-align: center;
+}
