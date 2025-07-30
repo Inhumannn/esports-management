@@ -12,9 +12,11 @@
     <link rel="shortcut icon" href="public/logo.png" type="image/x-icon">
     <title>Esport - Accueil</title>
   </head>
-  <body>
+  <body id="page-main">
     <?php include 'components/header.php'; ?>
     <main>
+      <?php include 'tournaments/displayTournaments.php' ?>
+      <?php include 'teams/displayTeams.php' ?>
     </main>
     <?php include 'components/footer.php'; ?>
   </body>

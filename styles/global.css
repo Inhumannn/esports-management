@@ -116,3 +116,41 @@ footer {
     }
   }
 }
+#page-profils {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .delete {
+      max-width: max-content;
+    }
+  }
+}
+#page-main {
+  #section-teams {
+    max-width: 670px;
+    margin: auto;
+    padding: var(--space-md);
+    .section-teams-card {
+      > div {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+  #section-tournaments {
+    .section-tournaments-card {
+      max-width: 670px;
+      margin: auto;
+      padding: var(--space-md);
+      > div:nth-child(1) {
+        display: flex;
+        align-items: flex-end;
+      }
+      > div:nth-child(3) {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}
