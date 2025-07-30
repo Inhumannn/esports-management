@@ -93,7 +93,8 @@ footer {
   padding: var(--space-lg);
   text-align: center;
 }
-#page-register {
+#page-register,
+#page-login {
   display: flex;
   justify-content: center;
   main {

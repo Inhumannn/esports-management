@@ -41,21 +41,21 @@ if (!empty($_POST['register'])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/global.css" />
-    <link rel="shortcut icon" href="public/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon" />
     <title>Esport Incription</title>
   </head>
   <body id="page-register">
     <main>
       <h1>Formulaire</h1>
       <form action="#" method="post">
-        <input type="text" name="name" id="name" placeholder=" Name" />
-        <input type="email" name="email" id="email" placeholder=" Email" />
+        <input type="text" name="name" id="name" placeholder=" Name" required/>
+        <input type="email" name="email" id="email" placeholder=" Email" required/>
         <input
           type="password"
           name="password"
           id="password"
           placeholder=" Password"
-        />
+        required/>
         <input type="submit" name="register" value="Enregister" />
       </form>
     </main>

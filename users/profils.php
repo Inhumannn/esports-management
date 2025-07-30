@@ -1,18 +1,3 @@
-<?php
-require_once('../config/connect.php'); 
-if(!empty($_SESSION['name']) || !empty($_SESSION['email'])){
-  if(!empty($_POST['delete'])){
-    $stmt = $pdo->prepare("DELETE FROM users WHERE email = :email");
-    $stmt->execute([
-      'email' => $_SESSION['email']
-    ]);
-    session_unset(); 
-    session_destroy();
-    header('location: /CP7_PENABERMOND_Thomas/');
-    exit();
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="fr-FR">
 <head>
@@ -32,3 +17,18 @@ if(!empty($_SESSION['name']) || !empty($_SESSION['email'])){
   <?php include '../components/footer.php'; ?>
 </body>
 </html>
+<?php
+require_once('../config/connect.php');
+if(!empty($_SESSION['name']) || !empty($_SESSION['email'])){
+  if(!empty($_POST['delete'])){
+    $stmt = $pdo->prepare("DELETE FROM users WHERE email = :email");
+    $stmt->execute([
+      'email' => $_SESSION['email']
+    ]);
+    session_unset(); 
+    session_destroy();
+    header('location: /CP7_PENABERMOND_Thomas/');
+    exit();
+  }
+}
+?>
