@@ -25,14 +25,14 @@
         <label for="password">Mot de passe : </label>
         <input
         type="password"
-        name="password"
-        id="password"
-        placeholder=" Password"
+        name="oldPassword"
+        id="oldPassword"
+        placeholder=" Ancien password"
         />
         <input
         type="password"
-        name="password"
-        id="password"
+        name="newPassword"
+        id="newPassword"
         placeholder=" Nouveaux Password"
         />
         <input type="submit" name="changePassword" value="Changer">
@@ -60,14 +60,35 @@ if(!empty($_SESSION['name']) || !empty($_SESSION['email'])){
 ?>
 <?php 
 if (!empty($_POST['changeName']) || !empty($_POST['changeEmail']) || !empty($_POST['changePassword'])){
+  $email = $_SESSION['email'];
   if(!empty($_POST['changeName']) && !empty($_POST['name'])){
-    // a faire
+    $stmt = $pdo->prepare('UPDATE users SET username = :name WHERE email = :email');
+    $stmt->execute([
+      'name' => $_POST['name'],
+      'email' => $email
+    ]);
+    $_SESSION['name'] = $_POST['name'];
+    header('location: /CP7_PENABERMOND_Thomas/');
+    exit();
   }
   if(!empty($_POST['changeEmail']) && !empty($_POST['email'])){
-    // a faire
+    $stmt = $pdo->prepare('UPDATE users SET email = :newEmail WHERE email = :email');
+    $stmt->execute([
+      'newEmail' => $_POST['email'],
+      'email' => $email
+    ]);
+    $_SESSION['email'] = $_POST['email'];
+    header('location: /CP7_PENABERMOND_Thomas/');
+    exit();
   }
   if(!empty($_POST['changePassword']) && !empty($_POST['password'])){
-    // a faire
+    // vérifier le mdp
+    // newHash a faire
+    // faire l'update
+    $stmt = $pdo->prepare('');
+    $stmt->execute([
+
+    ]);
   }
 }
 ?>
