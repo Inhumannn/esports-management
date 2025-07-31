@@ -1,22 +1,27 @@
 <?php
-require_once('../config/connect.php');
-session_start();
+require_once('../config/connect.php'); // Inclusion du fichier connect.php
+session_start(); // Démarre la session ou continue celle existante
 
-if (!empty($_POST['register'])) {
-  $name = htmlspecialchars(trim($_POST['name']));
+if (!empty($_POST['register'])) { // Vérifie si le formulaire d'inscription a été soumis
+  // Récupère et arrange les données du formulaires
+  $name = htmlspecialchars(trim($_POST['name'])); // Protège des attaques XSS et supprime les espaces blancs
   $email = htmlspecialchars(trim($_POST['email']));
   $password = trim($_POST['password']);
 
+  // Vérifie que tout les champs sont remplis
   if (empty($name) || empty($email) || empty($password)) {
     exit("Attention : Tous les champs doivent être renseignés.");
   };
 
+  // Sachage du mot de passe 
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
+  // Stock les informations en sessions
   $_SESSION['name'] = $name;
   $_SESSION['email'] = $email;
   $_SESSION['password'] = $hashedPassword;
 
+  // Insère un nouvelle utilisateur avec de nouvelle valeurs
   $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (:name, :email, :password)");
   $stmt->execute([
     'name' => $name,
@@ -24,6 +29,7 @@ if (!empty($_POST['register'])) {
     'password' => $hashedPassword
   ]);
 
+  // Vérifie que la ligne a était insérer donc fonctionnelle
   if ($stmt->rowCount() > 0) {
     $lastId = $pdo->lastInsertId();
     echo "<p style='color: green;'>Nouveau membre ajouté avec succès. ID inséré : $lastId</p>";

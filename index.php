@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="public/logo.png" type="image/x-icon">
     <title>Esport - Accueil</title>
   </head>
+  <!-- Inclus les composants dans la page principale -->
   <body id="page-main">
     <?php include 'components/header.php'; ?>
     <main>

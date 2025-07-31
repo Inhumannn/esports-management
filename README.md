@@ -61,7 +61,7 @@ La plateforme permet aux **joueurs** de s'inscrire, de créer ou rejoindre des �
 - Fichier readme.md
 - L'historique des commits
 
-[Lien vers le repository GitHub](...)
+[Lien vers le repository GitHub](https://github.com/Inhumannn/esports-management)
 
 ### Présentation Orale
 

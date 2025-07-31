@@ -1,4 +1,5 @@
-<?php 
+<?php
+// meme principe que pour la page "displayTeams.php"
 require_once('./config/connect.php'); 
 $stmt = $pdo->prepare("SELECT name, game, description, start_date, end_date FROM tournaments");
 $stmt->execute();
