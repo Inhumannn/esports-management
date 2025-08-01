@@ -87,6 +87,39 @@ if(!empty($_POST['name']) && !empty($_POST['joint'])){
     echo " Tu fais déjà parti d'une équipe";
   }
 }
+// Supprimer une équipe
+if(!empty($_POST['retrenchment'])){
+  // Récupère l'id de la table users grace a l'eamil
+  $stmtCheck = $pdo->prepare('SELECT id FROM users WHERE email = :email');
+  $stmtCheck->execute([
+    'email' => $email
+  ]);
+  $user = $stmtCheck->fetch(PDO::FETCH_ASSOC);
+  // si l'utilisateur existe
+  if(!empty($user)) {
+    $userId = $user['id'];
+    // Récupère team_id sur la table team_members grace l'id user
+    $stmt = $pdo->prepare('SELECT team_id FROM team_members WHERE user_id = :user_id');
+    $stmt->execute([
+      'user_id' => $userId
+    ]);
+    $team = $stmt->fetch(PDO::FETCH_ASSOC);
+    // si la team existe
+    if(!empty($team)){
+        $teamId = $team['team_id'];
+        // Suppime les membres de la teams
+        $stmtDeleteMemberTeam = $pdo->prepare('DELETE FROM team_members WHERE team_id = :team_id');
+        $stmtDeleteMemberTeam->execute([
+        'team_id' => $teamId
+      ]);
+      // Puis supprime la teams que la personne a créer
+      $stmtDeleteTeam = $pdo->prepare('DELETE FROM teams WHERE id = :team_id');
+      $stmtDeleteTeam->execute([
+      'team_id' => $teamId
+      ]);
+    }
+  }
+}
 ?>
 
 <!DOCTYPE html>
