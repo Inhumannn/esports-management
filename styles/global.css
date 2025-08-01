@@ -31,7 +31,8 @@
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-weight: var(--fw-title);
 }
 h1 {
@@ -46,6 +47,7 @@ h3 {
   font-family: var(--font-title);
   font-size: var(--fz-title3);
 }
+h4,
 p,
 a {
   font-family: var(--font-main);
@@ -126,31 +128,49 @@ footer {
     }
   }
 }
-#page-main {
-  #section-teams {
+#section-tournaments {
+  .section-tournaments-card {
     max-width: 670px;
     margin: auto;
     padding: var(--space-sm);
-    .section-teams-card {
-      > div {
+    .title-game {
+      display: flex;
+      align-items: flex-end;
+    }
+    .date {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+#section-teams {
+  max-width: 670px;
+  margin: auto;
+  padding: var(--space-sm);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 37px;
+  .section-teams-card {
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding: 15px 0;
+      gap: 5px;
+      .user {
         display: flex;
-        gap: 20px;
       }
     }
   }
-  #section-tournaments {
-    .section-tournaments-card {
-      max-width: 670px;
-      margin: auto;
-      padding: var(--space-sm);
-      .title-game {
-        display: flex;
-        align-items: flex-end;
-      }
-      .date {
-        display: flex;
-        gap: 20px;
-      }
-    }
+}
+#page-main {
+  h2 {
+    text-align: center;
+  }
+}
+#teams {
+  h2,
+  section:nth-child(1) > form,
+  section:nth-child(2) > form > div {
+    text-align: center;
   }
 }

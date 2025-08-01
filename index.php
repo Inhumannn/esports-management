@@ -11,7 +11,9 @@
   <body id="page-main">
     <?php include 'components/header.php'; ?>
     <main>
+      <h2>Tournois</h2>
       <?php include 'tournaments/displayTournaments.php' ?>
+      <h2>Equipe</h2>
       <?php include 'teams/displayTeams.php' ?>
     </main>
     <?php include 'components/footer.php'; ?>

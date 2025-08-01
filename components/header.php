@@ -1,5 +1,7 @@
 <?php
-session_start(); // Démarre la session ou continue celle existante
+if(session_status() === PHP_SESSION_NONE) {
+  session_start(); // Démarre la session ou continue celle existante  
+}
 // Si le formulaire est sousmis (bouton cliqué)
 if(!empty($_POST['disconnection'])){
   session_unset(); // On supprime toutes les variables de la sessions

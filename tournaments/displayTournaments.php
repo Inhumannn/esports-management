@@ -9,8 +9,8 @@ $tournaments= $stmt->fetchAll(PDO::FETCH_ASSOC);
   <?php foreach($tournaments as $tournament):?>
   <article class="section-tournaments-card">
     <div class="title-game">
-      <h2><?= htmlspecialchars($tournament['name']) ?></h2>
-      <h3><?= htmlspecialchars($tournament['game']) ?></h3>
+      <h3><?= htmlspecialchars($tournament['name']) ?></h3>
+      <h4><?= htmlspecialchars($tournament['game']) ?></h4>
     </div>
     <p><?= htmlspecialchars($tournament['description']) ?></p>
     <div class="date">
